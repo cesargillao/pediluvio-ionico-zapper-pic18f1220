@@ -1,0 +1,201 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016.0   SegPar
+016.1   Zapper
+016.2   pwm
+016.3   Operando
+017     c
+018     S
+019     M
+01A     i
+01B-01C Amp
+01D-020 Amperaje
+021     lcd_init.i
+021     @PRINTF_D0_611.P1
+021     @PSTRINGCN_611.P2
+021-022 @ITOF.P3
+021-024 @FLT.P4
+021-024 @PRINTF_L32D_611FPFPF.P5
+021     LeerADC.@SCRATCH1
+021     @PSTRINGC_611.@SCRATCH1
+021     Estado.@SCRATCH1
+021     Fin.@SCRATCH1
+021     MAIN.@SCRATCH1
+022-025 lcd_init.LCD_INIT_STRING
+022     @PRINTF_D0_611.P1
+022     LeerADC.@SCRATCH2
+022     @PSTRINGC_611.@SCRATCH2
+022     @PSTRINGCN_611.@SCRATCH1
+023     LeerADC.@SCRATCH3
+023     @PSTRINGCN_611.@SCRATCH2
+023     @PRINTF_D0_611.@SCRATCH1
+024     LeerADC.@SCRATCH4
+024     @PRINTF_D0_611.@SCRATCH2
+025     @PRINTF_L32D_611FPFPF.P1
+025-028 @DIVFF.P2
+025-028 @FLT.P3
+025     @PRINTF_D0_611.@SCRATCH3
+026     lcd_init.@SCRATCH1
+026     @PRINTF_D0_611.@SCRATCH4
+026     @PRINTF_L32D_611FPFPF.@SCRATCH1
+027     @DIV88.P1
+027     @PRINTF_L32D_611FPFPF.@SCRATCH2
+028     @DIV88.P1
+028     @PRINTF_L32D_611FPFPF.@SCRATCH3
+029-02C @DIVFF.P1
+029     @DIV88.@SCRATCH1
+029     @PRINTF_L32D_611FPFPF.@SCRATCH4
+029     @FLT.@SCRATCH1
+02A     @PRINTF_L32D_611FPFPF.@SCRATCH5
+02A     @FLT.@SCRATCH2
+02B     @PRINTF_L32D_611FPFPF.@SCRATCH6
+02C     @PRINTF_L32D_611FPFPF.@SCRATCH7
+02D     @DIVFF.@SCRATCH1
+02D     @PRINTF_L32D_611FPFPF.@SCRATCH8
+02E     lcd_putc.c
+02E-031 @DIV3232.P1
+02E-031 @MULFF.P2
+02E-031 @FTOSD.P3
+02E     @DIVFF.@SCRATCH2
+02F     @delay_ms1.P1
+02F     lcd_gotoxy.x
+02F     @DIVFF.@SCRATCH3
+030     lcd_gotoxy.y
+030     @DIVFF.@SCRATCH4
+031     lcd_gotoxy.address
+031     @DIVFF.@SCRATCH5
+032-035 @DIV3232.P1
+032-035 @MULFF.P2
+032     lcd_gotoxy.@SCRATCH1
+032     @DIVFF.@SCRATCH6
+032     @FTOSD.@SCRATCH1
+033     lcd_send_byte.address
+034     lcd_send_byte.n
+035     lcd_read_byte.low
+035     lcd_send_byte.@SCRATCH1
+036     lcd_read_byte.high
+036     lcd_send_nibble.n
+036     @MULFF.@SCRATCH1
+036     @DIV3232.@SCRATCH1
+037     lcd_read_byte.@SCRATCH1
+037     @MULFF.@SCRATCH2
+037     @DIV3232.@SCRATCH2
+038     @MULFF.@SCRATCH3
+038     @DIV3232.@SCRATCH3
+039     @DIV3232.@SCRATCH4
+03A     @DIV3232.@SCRATCH5
+F80.2   Buzzer
+F80.4   BInicio
+F80.5   BZapper
+F81     lcd
+F81.2   Rele
+F8A     lcdlat
+F93     lcdtris
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000096  timer
+0000BE  @const649.call
+0000D0  @const651.call
+0000E2  @const652.call
+0000F4  @const653.call
+00010C  @const670.call
+000124  @const675.call
+000148  @const677.call
+000166  @const679.call
+000178  @const681.call
+00018A  @const686.call
+00019C  @delay_ms1
+0001C4  lcd_send_nibble
+0001E0  lcd_read_nibble
+0001EC  lcd_read_byte
+000234  lcd_send_byte
+00027A  lcd_init
+0002F8  lcd_gotoxy
+00031A  lcd_putc
+00036A  @PSTRINGC_611
+00038A  @ITOF
+0003C2  @MULFF
+0004B4  @DIVFF
+000610  LeerADC
+000684  @PSTRINGCN_611
+0006A2  @FTOSD
+0006E2  @DIV3232
+000770  @PRINTF_L32D_611FPFPF
+0008E8  @FLT
+000960  Exceso
+0009C4  Pediluvio
+000A00  Pitido
+000A1A  @DIV88
+000A42  @PRINTF_D0_611
+000AEC  Mostrar
+000C20  Estado
+000C58  Fin
+000C86  PediluvioOperando
+000C9A  MAIN
+000C9A  @cinit1
+000CB2  @cinit2
+
+Project Directory:
+    D:\Proyectos\IonicPed + Zapper II\Software\
+
+Project Files:
+    PIZ-II.c                                                [26-dic-17 15:24  CRC=BE57BA4B]
+    C:\Program Files\PICC\Devices\18f1220.h                 [12-nov-13 14:35  CRC=382D866B]
+    C:\Program Files\PICC\Drivers\lcd.c                     [19-sep-13 15:38  CRC=D1A6378A]
+
+Source signature=99D1AFCA
+
+Units:
+    PIZ-II (main)
+
+Compiler Settings:
+    Processor:      PIC18F1220
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   PIZ-II.xsym
+    Errors:      PIZ-II.err
+    Ext Symbols: PIZ-II.esym
+    INHX32:      PIZ-II.hex
+    Symbols:     PIZ-II.sym
+    List:        PIZ-II.lst
+    Debug/COFF:  PIZ-II.cof
+    Project:     PIZ-II.ccspjt
+    Call Tree:   PIZ-II.tre
+    Statistics:  PIZ-II.STA

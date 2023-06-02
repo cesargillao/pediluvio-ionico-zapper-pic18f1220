@@ -1,0 +1,8 @@
+*.xlsx
+*.workspace
+*.pdsbak
+*.b#*
+*.s#*
+*.ccspjt
+__history/
+PCB/
